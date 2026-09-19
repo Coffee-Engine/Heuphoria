@@ -266,15 +266,29 @@
     }
 
     //Useful construction functions
-    window.color.hex = (hex) => {
-        const color = new window.color(0, 0, 0, 255);
-        color.hex = hex;
-        return color;
+    color.hex = (hex) => {
+        const created = new color(0, 0, 0, 255);
+        created.hex = hex;
+        return created;
     }
 
-    window.color.hsv = (h, s, v, a) => {
-        const color = new window.color(0, 0, 0, a);
-        color.setHSV(h, s, v);
-        return color;
+    color.hsv = (h, s, v, a) => {
+        const created = new color(0, 0, 0, a);
+        created.setHSV(h, s, v);
+        return created;
     }
+
+    //Now for colors you can create
+    const colorConstructor = (hex) => { return () => { return color.hex(hex); }; };
+
+    //CSS NAMED COLOURS GO HERE (DO LATER)
+    color.red = colorConstructor("#ff0000");
+    color.green = colorConstructor("#00ff00");
+    color.green = colorConstructor("#0000ff");
+    color.yellow = colorConstructor("#ffff00");
+    color.magenta = colorConstructor("#ff00ff");
+    color.cyan = colorConstructor("#00ffff");
+    color.white = colorConstructor("#ffffff");
+    color.black = colorConstructor("#000000");
+    color.transparent = colorConstructor("#00000000");
 }
