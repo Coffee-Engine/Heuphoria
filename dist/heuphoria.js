@@ -61,6 +61,7 @@
         //Then the DS value
         get _UNIFORM_VALUE_() { return [ this.r / 255, this.g / 255, this.b / 255, this.a / 255 ]; }
 
+        //Function to generate hex codes
         _hexFromRGB() {
             let output = "#";
             
@@ -127,7 +128,7 @@
 
             //If we are in the middle swap values
             if (this.#h % 120 >= 60) {
-                const n = x;
+                const n = c;
                 c = x;
                 x = n;
             }
@@ -229,6 +230,31 @@
 
         _updateAlpha() { this.#hex = this._hexFromRGB(); }
 
+        //Quick update functions
+        setRGB(r, g, b, a) {
+            this.#h = cleanNumber(h);
+            this.#h -= Math.floor(this.#h / 360) * 360;
+
+            this.#s = Math.max(0, Math.min(cleanNumber(s), 100));
+            this.#v = Math.max(0, Math.min(cleanNumber(v), 100));
+
+            if (a !== undefined) this.#a = Math.max(0, Math.min(cleanNumber(v), 255));
+            
+            this._updateHSV();
+        }
+
+        setHSV(h, s, v, a) {
+            this.#h = cleanNumber(h);
+            this.#h -= Math.floor(this.#h / 360) * 360;
+
+            this.#s = Math.max(0, Math.min(cleanNumber(s), 100));
+            this.#v = Math.max(0, Math.min(cleanNumber(v), 100));
+
+            if (a !== undefined) this.#a = Math.max(0, Math.min(cleanNumber(v), 255));
+            
+            this._updateHSV();
+        }
+
         constructor(r, g, b, a) {
             this.#r = r;
             this.#g = g;
@@ -243,6 +269,12 @@
     window.color.hex = (hex) => {
         const color = new window.color(0, 0, 0, 255);
         color.hex = hex;
+        return color;
+    }
+
+    window.color.hsv = (h, s, v, a) => {
+        const color = new window.color(0, 0, 0, a);
+        color.setHSV(h, s, v);
         return color;
     }
 }
