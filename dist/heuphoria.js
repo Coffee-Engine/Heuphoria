@@ -1,4 +1,4 @@
-DaveShade.color = class {
+window.color = class {
     //Private values
     #r = 0; #g = 0; #b = 0; #a = 0;
     
@@ -20,12 +20,12 @@ DaveShade.color = class {
     }
 }
 
-DaveShade.color.regex8 = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
-DaveShade.color.regex6 = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
-DaveShade.color.regex4 = /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i;
-DaveShade.color.regex3 = /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i;
+window.color.regex8 = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+window.color.regex6 = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+window.color.regex4 = /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i;
+window.color.regex3 = /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i;
 
-DaveShade.color.hex = (hex) => {
+window.color.hex = (hex) => {
     let r = 0; let g = 0; let b = 0; let a = 255;
 
     switch (typeof hex) {
@@ -37,14 +37,14 @@ DaveShade.color.hex = (hex) => {
             if (!hex.startsWith("#")) hex = `#${hex}`;
 
             //If we are above range return black
-            if (hex.length > 9) return new DaveShade.color(0, 0, 0, 1);
+            if (hex.length > 9) return new window.color(0, 0, 0, 1);
             //Find the best parsing regex for the hex
             if (hex.length > 5)
-                regex = (hex.length > 7) ? DaveShade.color.regex8 : DaveShade.color.regex6;
+                regex = (hex.length > 7) ? window.color.regex8 : window.color.regex6;
             else if (hex.length > 3)
-                regex = (hex.length > 3) ? DaveShade.color.regex4 : DaveShade.color.regex3;
+                regex = (hex.length > 3) ? window.color.regex4 : window.color.regex3;
             //If we aren't valid, return black
-            else return new DaveShade.color(0, 0, 0, 1);
+            else return new window.color(0, 0, 0, 1);
 
             //If we are sucessful start parsing the hex
             const split = regex.exec(hex);
@@ -62,7 +62,7 @@ DaveShade.color.hex = (hex) => {
         case "number":
             //Make sure it is a number
             hex = Number(hex);
-            if (isNaN(hex)) hex = 0;
+            if (isNaN(hex) || !isFinite(hex)) hex = 0;
 
             //Add alpha into the equation
             if (hex >= 16777216) {
@@ -84,5 +84,5 @@ DaveShade.color.hex = (hex) => {
     }
 
     //Convert to 0-1 range and send back as color
-    return new DaveShade.color(r, g, b, a);
+    return new window.color(r, g, b, a);
 }
