@@ -265,7 +265,7 @@
         }
     }
 
-    //Useful color functions
+    //Useful construction functions
     window.color.hex = (hex) => {
         const color = new window.color(0, 0, 0, 255);
         color.hex = hex;
