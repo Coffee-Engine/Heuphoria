@@ -282,13 +282,194 @@
     const colorConstructor = (hex) => { return () => { return color.hex(hex); }; };
 
     //CSS NAMED COLOURS GO HERE (DO LATER)
-    color.red = colorConstructor("#ff0000");
-    color.green = colorConstructor("#00ff00");
-    color.green = colorConstructor("#0000ff");
-    color.yellow = colorConstructor("#ffff00");
-    color.magenta = colorConstructor("#ff00ff");
-    color.cyan = colorConstructor("#00ffff");
-    color.white = colorConstructor("#ffffff");
-    color.black = colorConstructor("#000000");
+    //If you want to check the colours, search up //LETTER// -Alex
+
+    //A//
     color.transparent = colorConstructor("#00000000");
+    color.aliceBlue = colorConstructor("#f0f8ff");
+    color.antiqueWhite = colorConstructor("#faebd7");
+    color.aqua = colorConstructor("#00ffff");
+    color.aquamarine = colorConstructor("#7fffd4");
+    color.azure = colorConstructor("#f0ffff");
+    
+    //B//
+    color.beige = colorConstructor("#f5f5dc");
+    color.bisque = colorConstructor("#ffe4c4");
+    color.black = colorConstructor("#000000");
+    color.blanchedAlmond = colorConstructor("#ffebcd");
+    color.blue = colorConstructor("#0000ff");
+    color.blueViolet = colorConstructor("#8a2be2");
+    color.brown = colorConstructor("#a52a2a");
+    color.burlyWood = colorConstructor("#deb887");
+    
+    //C//
+    color.cadetBlue = colorConstructor("#5f9ea0");
+    color.chartreuse = colorConstructor("#7fff00");
+    color.chocolate = colorConstructor("#d2691e");
+    color.coral = colorConstructor("#ff7f50");
+    color.cornflowerBlue = colorConstructor("#6495ed");
+    color.cornsilk = colorConstructor("#fff8dc");
+    color.crimson = colorConstructor("#dc143c");
+    color.cyan = colorConstructor("#00ffff");
+
+    //D//
+    color.darkBlue = colorConstructor("#00008b");
+    color.darkCyan = colorConstructor("#008b8b");
+    color.darkGoldenRod = colorConstructor("#b8860b");
+    color.darkGray = colorConstructor("#a9a9a9");
+    color.darkGrey = colorConstructor("#a9a9a9");
+    color.darkGreen = colorConstructor("#006400");
+    color.darkKhaki = colorConstructor("#bdb76b");
+    color.darkMagenta = colorConstructor("#8b008b");
+    color.darkOliveGreen = colorConstructor("#556b2f");
+    color.darkOrange = colorConstructor("#ff8c00");
+    color.darkOrchid = colorConstructor("#9932cc");
+    color.darkRed = colorConstructor("#8b0000");
+    color.darkSalmon = colorConstructor("#e9967a");
+    color.darkSeaGreen = colorConstructor("#8fbc8f");
+    color.darkSlateBlue = colorConstructor("#483d8b");
+    color.darkSlateGray = colorConstructor("#2f4f4f");
+    color.darkSlateGrey = colorConstructor("#2f4f4f");
+    color.darkTurquoise = colorConstructor("#00ced1");
+    color.darkViolet = colorConstructor("#9400d3");
+    color.deepPink = colorConstructor("#ff1493");
+    color.deepSkyBlue = colorConstructor("#00bfff");
+    color.dimGray = colorConstructor("#696969");
+    color.dimGrey = colorConstructor("#696969");
+    color.dodgerBlue = colorConstructor("#1e90ff");
+    
+    //F//
+    color.fireBrick = colorConstructor("#b22222");
+    color.floralWhite = colorConstructor("#fffaf0");
+    color.forestGreen = colorConstructor("#228b22");
+    color.fuchsia = colorConstructor("#ff00ff");
+    
+    //G//
+    color.gainsboro = colorConstructor("#dcdcdc");
+    color.ghostWhite = colorConstructor("#f8f8ff");
+    color.gold = colorConstructor("#ffd700");
+    color.goldenRod = colorConstructor("#daa520");
+    color.gray = colorConstructor("#808080");
+    color.grey = colorConstructor("#808080");
+    color.green = colorConstructor("#008000");
+    color.greenYellow = colorConstructor("#adff2f");
+    
+    //H//
+    color.honeyDew = colorConstructor("#f0fff0");
+    color.hotPink = colorConstructor("#ff69b4");
+
+    //I//
+    color.indianRed = colorConstructor("#cd5c5c");
+    color.indigo = colorConstructor("#4b0082");
+    color.ivory = colorConstructor("#fffff0");
+    
+    //K//
+    color.khaki = colorConstructor("#f0e68c");
+
+    //L//
+    color.lavender = colorConstructor("#e6e6fa");
+    color.lavenderBlush = colorConstructor("#fff0f5");
+    color.lawnGreen = colorConstructor("#7cfc00");
+    color.lemonChiffon = colorConstructor("#fffacd");
+    color.lightBlue = colorConstructor("#add8e6");
+    color.lightCoral = colorConstructor("#f08080");
+    color.lightCyan = colorConstructor("#e0ffff");
+    color.lightGoldenRodYellow = colorConstructor("#fafad2");
+    color.lightGray = colorConstructor("#d3d3d3");
+    color.lightGrey = colorConstructor("#d3d3d3");
+    color.lightGreen = colorConstructor("#90ee90");
+    color.lightPink = colorConstructor("#ffb6c1");
+    color.lightSalmon = colorConstructor("#ffa07a");
+    color.lightSeaGreen = colorConstructor("#20b2aa");
+    color.lightSkyBlue = colorConstructor("#87cefa");
+    color.lightSlateGray = colorConstructor("#778899");
+    color.lightSlateGrey = colorConstructor("#778899");
+    color.lightSteelBlue = colorConstructor("#b0c4de");
+    color.lightYellow = colorConstructor("#ffffe0");
+    color.lime = colorConstructor("#00ff00");
+    color.limeGreen = colorConstructor("#32cd32");
+    color.linen = colorConstructor("#faf0e6");
+    
+    //M//
+    color.magenta = colorConstructor("#ff00ff");
+    color.maroon = colorConstructor("#800000");
+    color.mediumAquaMarine = colorConstructor("#66cdaa");
+    color.mediumBlue = colorConstructor("#0000cd");
+    color.mediumOrchid = colorConstructor("#ba55d3");
+    color.mediumPurple = colorConstructor("#9370db");
+    color.mediumSeaGreen = colorConstructor("#3cb371");
+    color.mediumSlateBlue = colorConstructor("#7b68ee");
+    color.mediumSpringGreen = colorConstructor("#00fa9a");
+    color.mediumTurquoise = colorConstructor("#48d1cc");
+    color.mediumVioletRed = colorConstructor("#c71585");
+    color.midnightBlue = colorConstructor("#191970");
+    color.mintCream = colorConstructor("#f5fffa");
+    color.mistyRose = colorConstructor("#ffe4e1");
+    color.moccasin = colorConstructor("#ffe4b5");
+    
+    //N//
+    color.navajoWhite = colorConstructor("#ffdead");
+    color.navy = colorConstructor("#000080");
+    
+    //O//
+    color.oldLace = colorConstructor("#fdf5e6");
+    color.olive = colorConstructor("#808000");
+    color.oliveDrab = colorConstructor("#6b8e23");
+    color.orange = colorConstructor("#ffa500");
+    color.orangeRed = colorConstructor("#ff4500");
+    color.orchid = colorConstructor("#da70d6");
+    
+    //P//
+    color.paleGoldenRod = colorConstructor("#eee8aa");
+    color.paleGreen = colorConstructor("#98fb98");
+    color.paleTurquoise = colorConstructor("#afeeee");
+    color.paleVoiletRed = colorConstructor("#db7093");
+    color.papayaWhip = colorConstructor("#ffefd5");
+    color.peachPuff = colorConstructor("#ffdab9");
+    color.peru = colorConstructor("#cd853f");
+    color.pink = colorConstructor("#ffc0cb");
+    color.plum = colorConstructor("#dda0dd");
+    color.powderBlue = colorConstructor("#b0e0e6");
+    color.purple = colorConstructor("#800080");
+    
+    //R//
+    color.rebeccaPurple = colorConstructor("#663399");
+    color.red = colorConstructor("#ff0000");
+    color.rosyBrown = colorConstructor("#bc8f8f");
+    color.royalBlue = colorConstructor("#4169e1");
+    
+    //S//
+    color.saddleBrown = colorConstructor("#8b4513");
+    color.salmon = colorConstructor("#fa8072");
+    color.sandyBrown = colorConstructor("#f4a460");
+    color.seaGreen = colorConstructor("#2e8b57");
+    color.seaShell = colorConstructor("#fff5ee");
+    color.sienna = colorConstructor("#a0522d");
+    color.silver = colorConstructor("#c0c0c0");
+    color.skyBlue = colorConstructor("#87ceeb");
+    color.slateBlue = colorConstructor("#6a5acd");
+    color.slateGray = colorConstructor("#708090");
+    color.slateGrey = colorConstructor("#708090");
+    color.snow = colorConstructor("#fffafa");
+    color.springGreen = colorConstructor("#00ff7f");
+    color.steelBlue = colorConstructor("#4682b4");
+    
+    //T//
+    color.tan = colorConstructor("#d2b48c");
+    color.teal = colorConstructor("#008080");
+    color.thistle = colorConstructor("#d8bfd8");
+    color.tomato = colorConstructor("#ff6347");
+    color.turquoise = colorConstructor("#40e0d0");
+    
+    //V//
+    color.violet = colorConstructor("#ee82ee");
+
+    //W//
+    color.wheat = colorConstructor("#f5deb3");
+    color.white = colorConstructor("#ffffff");
+    color.whiteSmoke = colorConstructor("#f5f5f5");
+
+    //Y//
+    color.yellow = colorConstructor("#ffff00");
+    color.yellowGreen = colorConstructor("#9acd32");
 }
