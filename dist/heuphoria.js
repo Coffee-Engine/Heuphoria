@@ -281,7 +281,6 @@
     //Now for colors you can create
     const colorConstructor = (hex) => { return () => { return color.hex(hex); }; };
 
-    //CSS NAMED COLOURS GO HERE (DO LATER)
     //If you want to check the colours, search up //LETTER// -Alex
 
     //A//
