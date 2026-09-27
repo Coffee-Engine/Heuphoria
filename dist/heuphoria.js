@@ -279,7 +279,10 @@
     }
 
     //Now for colors you can create
-    const colorConstructor = (hex) => ({ get: () => color.hex(hex) });
+    const colorConstructor = (hex) => ({
+        set: () => console.error("Trying to set a read only value!"),
+        get: () => color.hex(hex)
+    });
 
     //If you want to check the colours, search up //LETTER// -Alex
 
