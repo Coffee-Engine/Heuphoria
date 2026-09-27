@@ -255,6 +255,10 @@
             this._updateHSV();
         }
 
+        invert() {
+            return new color(255 - this.r, 255 - this.g, 255 - this.b, this.a);
+        }
+
         constructor(r, g, b, a) {
             this.#r = r;
             this.#g = g;

@@ -72,3 +72,15 @@ code {
 .subtitle {
     margin: 0px;
 }
+
+.colourList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.colorName {
+    background: var(--color-inverse);
+    color: var(--color);
+    padding: 0px;
+    margin: 0px;
+}
