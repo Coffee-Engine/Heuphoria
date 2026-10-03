@@ -237,7 +237,7 @@
             this.#r = Math.max(0, Math.min(cleanNumber(r), 255));
             this.#g = Math.max(0, Math.min(cleanNumber(g), 255));
             this.#b = Math.max(0, Math.min(cleanNumber(b), 255));
-            this.#a = Math.max(0, Math.min(cleanNumber(a), 255));
+            if (a !== undefined) this.#a = Math.max(0, Math.min(cleanNumber(a), 255));
 
             this._updateRGB();
         }
