@@ -46,7 +46,9 @@
         //Hue is slightly more complicated than the other numbers since it loops.
         set h(v) { 
             this.#h = cleanNumber(v);
-            this.#h -= Math.floor(this.#h / 360) * 360; 
+            this.#h -= Math.floor(this.#h / 360) * 360;
+            this.#h %= 360;
+
             this._updateHSV(); 
         } 
         get h() { return this.#h}
@@ -246,11 +248,12 @@
         setHSV(h, s, v, a) {
             this.#h = cleanNumber(h);
             this.#h -= Math.floor(this.#h / 360) * 360;
+            this.#h %= 360;
 
             this.#s = Math.max(0, Math.min(cleanNumber(s), 100));
             this.#v = Math.max(0, Math.min(cleanNumber(v), 100));
 
-            if (a !== undefined) this.#a = Math.max(0, Math.min(cleanNumber(v), 255));
+            if (a !== undefined) this.#a = Math.max(0, Math.min(cleanNumber(a), 255));
             
             this._updateHSV();
         }
