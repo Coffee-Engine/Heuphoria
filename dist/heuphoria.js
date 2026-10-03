@@ -255,8 +255,40 @@
             this._updateHSV();
         }
 
-        invert() {
-            return new Color(255 - this.r, 255 - this.g, 255 - this.b, this.a);
+        invert() { return new Color(255 - this.r, 255 - this.g, 255 - this.b, this.a); }
+
+        duplicate() { return new Color(this.r, this.g, this.b, this.a); }
+
+        mix(other, amount, useRGB) {
+            const output = this.duplicate();
+            amount = Math.max(Math.min(1, cleanNumber(amount)), 0);
+
+            //Make sure we are mixing with another color
+            if (!(other instanceof Color)) return output;
+            
+            //RGB interpolation
+            if (useRGB) {
+                output.setRGB(
+                    output.r + (other.r - output.r) * amount,
+                    output.g + (other.g - output.g) * amount,
+                    output.b + (other.b - output.b) * amount,
+                    output.a + (other.a - output.a) * amount
+                );
+            }
+            else {
+                let targetH = other.h;
+                
+                //Adjust H for clean interpolation across boundries
+                if (targetH - output.h > 180) targetH -= 360;
+                else if (targetH - output.h < -180) targetH += 360;
+
+                output.setHSV(
+                    output.h + (targetH - output.h) * amount,
+                    output.s + (other.s - output.s) * amount,
+                    output.v + (other.v - output.v) * amount,
+                    output.a + (other.a - output.a) * amount
+                );
+            }
         }
 
         constructor(r, g, b, a) {

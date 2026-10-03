@@ -2,9 +2,9 @@
     const colourList = document.getElementById("colourList");
 
     //Loop and display every color
-    for (key in Object.getOwnPropertyDescriptors(color)) {
-        let value = color[key];
-        if (value instanceof color) {
+    for (key in Object.getOwnPropertyDescriptors(Color)) {
+        let value = Color[key];
+        if (value instanceof Color) {
             const colorName = document.createElement("p");
 
             //Don't make invisible colours
