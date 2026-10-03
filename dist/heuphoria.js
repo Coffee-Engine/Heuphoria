@@ -234,15 +234,12 @@
 
         //Quick update functions
         setRGB(r, g, b, a) {
-            this.#h = cleanNumber(h);
-            this.#h -= Math.floor(this.#h / 360) * 360;
+            this.#r = Math.max(0, Math.min(cleanNumber(r), 255));
+            this.#g = Math.max(0, Math.min(cleanNumber(g), 255));
+            this.#b = Math.max(0, Math.min(cleanNumber(b), 255));
+            this.#a = Math.max(0, Math.min(cleanNumber(a), 255));
 
-            this.#s = Math.max(0, Math.min(cleanNumber(s), 100));
-            this.#v = Math.max(0, Math.min(cleanNumber(v), 100));
-
-            if (a !== undefined) this.#a = Math.max(0, Math.min(cleanNumber(v), 255));
-            
-            this._updateHSV();
+            this._updateRGB();
         }
 
         setHSV(h, s, v, a) {
