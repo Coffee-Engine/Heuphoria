@@ -26,7 +26,7 @@
     }
 
     //Now for the color related functions
-    window.color = class {
+    window.Color = class {
         //Private values
         #hex = "#00000000";
 
@@ -256,7 +256,7 @@
         }
 
         invert() {
-            return new color(255 - this.r, 255 - this.g, 255 - this.b, this.a);
+            return new Color(255 - this.r, 255 - this.g, 255 - this.b, this.a);
         }
 
         constructor(r, g, b, a) {
@@ -270,14 +270,14 @@
     }
 
     //Useful construction functions
-    color.hex = (hex) => {
-        const created = new color(0, 0, 0, 255);
+    Color.hex = (hex) => {
+        const created = new Color(0, 0, 0, 255);
         created.hex = hex;
         return created;
     }
 
-    color.hsv = (h, s, v, a) => {
-        const created = new color(0, 0, 0, a);
+    Color.hsv = (h, s, v, a) => {
+        const created = new Color(0, 0, 0, a);
         created.setHSV(h, s, v);
         return created;
     }
@@ -285,197 +285,197 @@
     //Now for colors you can create
     const colorConstructor = (hex) => ({
         set: () => console.error("Trying to set a read only value!"),
-        get: () => color.hex(hex)
+        get: () => Color.hex(hex)
     });
 
     //If you want to check the colours, search up //LETTER// -Alex
 
     //A//
-    Object.defineProperty(color, "transparent", colorConstructor("#00000000"));
-    Object.defineProperty(color, "aliceBlue", colorConstructor("#f0f8ff"));
-    Object.defineProperty(color, "antiqueWhite", colorConstructor("#faebd7"));
-    Object.defineProperty(color, "aqua", colorConstructor("#00ffff"));
-    Object.defineProperty(color, "aquamarine", colorConstructor("#7fffd4"));
-    Object.defineProperty(color, "azure", colorConstructor("#f0ffff"));
+    Object.defineProperty(Color, "transparent", colorConstructor("#00000000"));
+    Object.defineProperty(Color, "aliceBlue", colorConstructor("#f0f8ff"));
+    Object.defineProperty(Color, "antiqueWhite", colorConstructor("#faebd7"));
+    Object.defineProperty(Color, "aqua", colorConstructor("#00ffff"));
+    Object.defineProperty(Color, "aquamarine", colorConstructor("#7fffd4"));
+    Object.defineProperty(Color, "azure", colorConstructor("#f0ffff"));
     
     //B//
-    Object.defineProperty(color, "beige", colorConstructor("#f5f5dc"));
-    Object.defineProperty(color, "bisque", colorConstructor("#ffe4c4"));
-    Object.defineProperty(color, "black", colorConstructor("#000000"));
-    Object.defineProperty(color, "blanchedAlmond", colorConstructor("#ffebcd"));
-    Object.defineProperty(color, "blue", colorConstructor("#0000ff"));
-    Object.defineProperty(color, "blueViolet", colorConstructor("#8a2be2"));
-    Object.defineProperty(color, "brown", colorConstructor("#a52a2a"));
-    Object.defineProperty(color, "burlyWood", colorConstructor("#deb887"));
+    Object.defineProperty(Color, "beige", colorConstructor("#f5f5dc"));
+    Object.defineProperty(Color, "bisque", colorConstructor("#ffe4c4"));
+    Object.defineProperty(Color, "black", colorConstructor("#000000"));
+    Object.defineProperty(Color, "blanchedAlmond", colorConstructor("#ffebcd"));
+    Object.defineProperty(Color, "blue", colorConstructor("#0000ff"));
+    Object.defineProperty(Color, "blueViolet", colorConstructor("#8a2be2"));
+    Object.defineProperty(Color, "brown", colorConstructor("#a52a2a"));
+    Object.defineProperty(Color, "burlyWood", colorConstructor("#deb887"));
     
     //C//
-    Object.defineProperty(color, "cadetBlue", colorConstructor("#5f9ea0"));
-    Object.defineProperty(color, "chartreuse", colorConstructor("#7fff00"));
-    Object.defineProperty(color, "chocolate", colorConstructor("#d2691e"));
-    Object.defineProperty(color, "coral", colorConstructor("#ff7f50"));
-    Object.defineProperty(color, "cornflowerBlue", colorConstructor("#6495ed"));
-    Object.defineProperty(color, "cornsilk", colorConstructor("#fff8dc"));
-    Object.defineProperty(color, "crimson", colorConstructor("#dc143c"));
-    Object.defineProperty(color, "cyan", colorConstructor("#00ffff"));
+    Object.defineProperty(Color, "cadetBlue", colorConstructor("#5f9ea0"));
+    Object.defineProperty(Color, "chartreuse", colorConstructor("#7fff00"));
+    Object.defineProperty(Color, "chocolate", colorConstructor("#d2691e"));
+    Object.defineProperty(Color, "coral", colorConstructor("#ff7f50"));
+    Object.defineProperty(Color, "cornflowerBlue", colorConstructor("#6495ed"));
+    Object.defineProperty(Color, "cornsilk", colorConstructor("#fff8dc"));
+    Object.defineProperty(Color, "crimson", colorConstructor("#dc143c"));
+    Object.defineProperty(Color, "cyan", colorConstructor("#00ffff"));
 
     //D//
-    Object.defineProperty(color, "darkBlue", colorConstructor("#00008b"));
-    Object.defineProperty(color, "darkCyan", colorConstructor("#008b8b"));
-    Object.defineProperty(color, "darkGoldenRod", colorConstructor("#b8860b"));
-    Object.defineProperty(color, "darkGray", colorConstructor("#a9a9a9"));
-    Object.defineProperty(color, "darkGrey", colorConstructor("#a9a9a9"));
-    Object.defineProperty(color, "darkGreen", colorConstructor("#006400"));
-    Object.defineProperty(color, "darkKhaki", colorConstructor("#bdb76b"));
-    Object.defineProperty(color, "darkMagenta", colorConstructor("#8b008b"));
-    Object.defineProperty(color, "darkOliveGreen", colorConstructor("#556b2f"));
-    Object.defineProperty(color, "darkOrange", colorConstructor("#ff8c00"));
-    Object.defineProperty(color, "darkOrchid", colorConstructor("#9932cc"));
-    Object.defineProperty(color, "darkRed", colorConstructor("#8b0000"));
-    Object.defineProperty(color, "darkSalmon", colorConstructor("#e9967a"));
-    Object.defineProperty(color, "darkSeaGreen", colorConstructor("#8fbc8f"));
-    Object.defineProperty(color, "darkSlateBlue", colorConstructor("#483d8b"));
-    Object.defineProperty(color, "darkSlateGray", colorConstructor("#2f4f4f"));
-    Object.defineProperty(color, "darkSlateGrey", colorConstructor("#2f4f4f"));
-    Object.defineProperty(color, "darkTurquoise", colorConstructor("#00ced1"));
-    Object.defineProperty(color, "darkViolet", colorConstructor("#9400d3"));
-    Object.defineProperty(color, "deepPink", colorConstructor("#ff1493"));
-    Object.defineProperty(color, "deepSkyBlue", colorConstructor("#00bfff"));
-    Object.defineProperty(color, "dimGray", colorConstructor("#696969"));
-    Object.defineProperty(color, "dimGrey", colorConstructor("#696969"));
-    Object.defineProperty(color, "dodgerBlue", colorConstructor("#1e90ff"));
+    Object.defineProperty(Color, "darkBlue", colorConstructor("#00008b"));
+    Object.defineProperty(Color, "darkCyan", colorConstructor("#008b8b"));
+    Object.defineProperty(Color, "darkGoldenRod", colorConstructor("#b8860b"));
+    Object.defineProperty(Color, "darkGray", colorConstructor("#a9a9a9"));
+    Object.defineProperty(Color, "darkGrey", colorConstructor("#a9a9a9"));
+    Object.defineProperty(Color, "darkGreen", colorConstructor("#006400"));
+    Object.defineProperty(Color, "darkKhaki", colorConstructor("#bdb76b"));
+    Object.defineProperty(Color, "darkMagenta", colorConstructor("#8b008b"));
+    Object.defineProperty(Color, "darkOliveGreen", colorConstructor("#556b2f"));
+    Object.defineProperty(Color, "darkOrange", colorConstructor("#ff8c00"));
+    Object.defineProperty(Color, "darkOrchid", colorConstructor("#9932cc"));
+    Object.defineProperty(Color, "darkRed", colorConstructor("#8b0000"));
+    Object.defineProperty(Color, "darkSalmon", colorConstructor("#e9967a"));
+    Object.defineProperty(Color, "darkSeaGreen", colorConstructor("#8fbc8f"));
+    Object.defineProperty(Color, "darkSlateBlue", colorConstructor("#483d8b"));
+    Object.defineProperty(Color, "darkSlateGray", colorConstructor("#2f4f4f"));
+    Object.defineProperty(Color, "darkSlateGrey", colorConstructor("#2f4f4f"));
+    Object.defineProperty(Color, "darkTurquoise", colorConstructor("#00ced1"));
+    Object.defineProperty(Color, "darkViolet", colorConstructor("#9400d3"));
+    Object.defineProperty(Color, "deepPink", colorConstructor("#ff1493"));
+    Object.defineProperty(Color, "deepSkyBlue", colorConstructor("#00bfff"));
+    Object.defineProperty(Color, "dimGray", colorConstructor("#696969"));
+    Object.defineProperty(Color, "dimGrey", colorConstructor("#696969"));
+    Object.defineProperty(Color, "dodgerBlue", colorConstructor("#1e90ff"));
     
     //F//
-    Object.defineProperty(color, "fireBrick", colorConstructor("#b22222"));
-    Object.defineProperty(color, "floralWhite", colorConstructor("#fffaf0"));
-    Object.defineProperty(color, "forestGreen", colorConstructor("#228b22"));
-    Object.defineProperty(color, "fuchsia", colorConstructor("#ff00ff"));
+    Object.defineProperty(Color, "fireBrick", colorConstructor("#b22222"));
+    Object.defineProperty(Color, "floralWhite", colorConstructor("#fffaf0"));
+    Object.defineProperty(Color, "forestGreen", colorConstructor("#228b22"));
+    Object.defineProperty(Color, "fuchsia", colorConstructor("#ff00ff"));
     
     //G//
-    Object.defineProperty(color, "gainsboro", colorConstructor("#dcdcdc"));
-    Object.defineProperty(color, "ghostWhite", colorConstructor("#f8f8ff"));
-    Object.defineProperty(color, "gold", colorConstructor("#ffd700"));
-    Object.defineProperty(color, "goldenRod", colorConstructor("#daa520"));
-    Object.defineProperty(color, "gray", colorConstructor("#808080"));
-    Object.defineProperty(color, "grey", colorConstructor("#808080"));
-    Object.defineProperty(color, "green", colorConstructor("#008000"));
-    Object.defineProperty(color, "greenYellow", colorConstructor("#adff2f"));
+    Object.defineProperty(Color, "gainsboro", colorConstructor("#dcdcdc"));
+    Object.defineProperty(Color, "ghostWhite", colorConstructor("#f8f8ff"));
+    Object.defineProperty(Color, "gold", colorConstructor("#ffd700"));
+    Object.defineProperty(Color, "goldenRod", colorConstructor("#daa520"));
+    Object.defineProperty(Color, "gray", colorConstructor("#808080"));
+    Object.defineProperty(Color, "grey", colorConstructor("#808080"));
+    Object.defineProperty(Color, "green", colorConstructor("#008000"));
+    Object.defineProperty(Color, "greenYellow", colorConstructor("#adff2f"));
     
     //H//
-    Object.defineProperty(color, "honeyDew", colorConstructor("#f0fff0"));
-    Object.defineProperty(color, "hotPink", colorConstructor("#ff69b4"));
+    Object.defineProperty(Color, "honeyDew", colorConstructor("#f0fff0"));
+    Object.defineProperty(Color, "hotPink", colorConstructor("#ff69b4"));
 
     //I//
-    Object.defineProperty(color, "indianRed", colorConstructor("#cd5c5c"));
-    Object.defineProperty(color, "indigo", colorConstructor("#4b0082"));
-    Object.defineProperty(color, "ivory", colorConstructor("#fffff0"));
+    Object.defineProperty(Color, "indianRed", colorConstructor("#cd5c5c"));
+    Object.defineProperty(Color, "indigo", colorConstructor("#4b0082"));
+    Object.defineProperty(Color, "ivory", colorConstructor("#fffff0"));
     
     //K//
-    Object.defineProperty(color, "khaki", colorConstructor("#f0e68c"));
+    Object.defineProperty(Color, "khaki", colorConstructor("#f0e68c"));
 
     //L//
-    Object.defineProperty(color, "lavender", colorConstructor("#e6e6fa"));
-    Object.defineProperty(color, "lavenderBlush", colorConstructor("#fff0f5"));
-    Object.defineProperty(color, "lawnGreen", colorConstructor("#7cfc00"));
-    Object.defineProperty(color, "lemonChiffon", colorConstructor("#fffacd"));
-    Object.defineProperty(color, "lightBlue", colorConstructor("#add8e6"));
-    Object.defineProperty(color, "lightCoral", colorConstructor("#f08080"));
-    Object.defineProperty(color, "lightCyan", colorConstructor("#e0ffff"));
-    Object.defineProperty(color, "lightGoldenRodYellow", colorConstructor("#fafad2"));
-    Object.defineProperty(color, "lightGray", colorConstructor("#d3d3d3"));
-    Object.defineProperty(color, "lightGrey", colorConstructor("#d3d3d3"));
-    Object.defineProperty(color, "lightGreen", colorConstructor("#90ee90"));
-    Object.defineProperty(color, "lightPink", colorConstructor("#ffb6c1"));
-    Object.defineProperty(color, "lightSalmon", colorConstructor("#ffa07a"));
-    Object.defineProperty(color, "lightSeaGreen", colorConstructor("#20b2aa"));
-    Object.defineProperty(color, "lightSkyBlue", colorConstructor("#87cefa"));
-    Object.defineProperty(color, "lightSlateGray", colorConstructor("#778899"));
-    Object.defineProperty(color, "lightSlateGrey", colorConstructor("#778899"));
-    Object.defineProperty(color, "lightSteelBlue", colorConstructor("#b0c4de"));
-    Object.defineProperty(color, "lightYellow", colorConstructor("#ffffe0"));
-    Object.defineProperty(color, "lime", colorConstructor("#00ff00"));
-    Object.defineProperty(color, "limeGreen", colorConstructor("#32cd32"));
-    Object.defineProperty(color, "linen", colorConstructor("#faf0e6"));
+    Object.defineProperty(Color, "lavender", colorConstructor("#e6e6fa"));
+    Object.defineProperty(Color, "lavenderBlush", colorConstructor("#fff0f5"));
+    Object.defineProperty(Color, "lawnGreen", colorConstructor("#7cfc00"));
+    Object.defineProperty(Color, "lemonChiffon", colorConstructor("#fffacd"));
+    Object.defineProperty(Color, "lightBlue", colorConstructor("#add8e6"));
+    Object.defineProperty(Color, "lightCoral", colorConstructor("#f08080"));
+    Object.defineProperty(Color, "lightCyan", colorConstructor("#e0ffff"));
+    Object.defineProperty(Color, "lightGoldenRodYellow", colorConstructor("#fafad2"));
+    Object.defineProperty(Color, "lightGray", colorConstructor("#d3d3d3"));
+    Object.defineProperty(Color, "lightGrey", colorConstructor("#d3d3d3"));
+    Object.defineProperty(Color, "lightGreen", colorConstructor("#90ee90"));
+    Object.defineProperty(Color, "lightPink", colorConstructor("#ffb6c1"));
+    Object.defineProperty(Color, "lightSalmon", colorConstructor("#ffa07a"));
+    Object.defineProperty(Color, "lightSeaGreen", colorConstructor("#20b2aa"));
+    Object.defineProperty(Color, "lightSkyBlue", colorConstructor("#87cefa"));
+    Object.defineProperty(Color, "lightSlateGray", colorConstructor("#778899"));
+    Object.defineProperty(Color, "lightSlateGrey", colorConstructor("#778899"));
+    Object.defineProperty(Color, "lightSteelBlue", colorConstructor("#b0c4de"));
+    Object.defineProperty(Color, "lightYellow", colorConstructor("#ffffe0"));
+    Object.defineProperty(Color, "lime", colorConstructor("#00ff00"));
+    Object.defineProperty(Color, "limeGreen", colorConstructor("#32cd32"));
+    Object.defineProperty(Color, "linen", colorConstructor("#faf0e6"));
     
     //M//
-    Object.defineProperty(color, "magenta", colorConstructor("#ff00ff"));
-    Object.defineProperty(color, "maroon", colorConstructor("#800000"));
-    Object.defineProperty(color, "mediumAquaMarine", colorConstructor("#66cdaa"));
-    Object.defineProperty(color, "mediumBlue", colorConstructor("#0000cd"));
-    Object.defineProperty(color, "mediumOrchid", colorConstructor("#ba55d3"));
-    Object.defineProperty(color, "mediumPurple", colorConstructor("#9370db"));
-    Object.defineProperty(color, "mediumSeaGreen", colorConstructor("#3cb371"));
-    Object.defineProperty(color, "mediumSlateBlue", colorConstructor("#7b68ee"));
-    Object.defineProperty(color, "mediumSpringGreen", colorConstructor("#00fa9a"));
-    Object.defineProperty(color, "mediumTurquoise", colorConstructor("#48d1cc"));
-    Object.defineProperty(color, "mediumVioletRed", colorConstructor("#c71585"));
-    Object.defineProperty(color, "midnightBlue", colorConstructor("#191970"));
-    Object.defineProperty(color, "mintCream", colorConstructor("#f5fffa"));
-    Object.defineProperty(color, "mistyRose", colorConstructor("#ffe4e1"));
-    Object.defineProperty(color, "moccasin", colorConstructor("#ffe4b5"));
+    Object.defineProperty(Color, "magenta", colorConstructor("#ff00ff"));
+    Object.defineProperty(Color, "maroon", colorConstructor("#800000"));
+    Object.defineProperty(Color, "mediumAquaMarine", colorConstructor("#66cdaa"));
+    Object.defineProperty(Color, "mediumBlue", colorConstructor("#0000cd"));
+    Object.defineProperty(Color, "mediumOrchid", colorConstructor("#ba55d3"));
+    Object.defineProperty(Color, "mediumPurple", colorConstructor("#9370db"));
+    Object.defineProperty(Color, "mediumSeaGreen", colorConstructor("#3cb371"));
+    Object.defineProperty(Color, "mediumSlateBlue", colorConstructor("#7b68ee"));
+    Object.defineProperty(Color, "mediumSpringGreen", colorConstructor("#00fa9a"));
+    Object.defineProperty(Color, "mediumTurquoise", colorConstructor("#48d1cc"));
+    Object.defineProperty(Color, "mediumVioletRed", colorConstructor("#c71585"));
+    Object.defineProperty(Color, "midnightBlue", colorConstructor("#191970"));
+    Object.defineProperty(Color, "mintCream", colorConstructor("#f5fffa"));
+    Object.defineProperty(Color, "mistyRose", colorConstructor("#ffe4e1"));
+    Object.defineProperty(Color, "moccasin", colorConstructor("#ffe4b5"));
     
     //N//
-    Object.defineProperty(color, "navajoWhite", colorConstructor("#ffdead"));
-    Object.defineProperty(color, "navy", colorConstructor("#000080"));
+    Object.defineProperty(Color, "navajoWhite", colorConstructor("#ffdead"));
+    Object.defineProperty(Color, "navy", colorConstructor("#000080"));
     
     //O//
-    Object.defineProperty(color, "oldLace", colorConstructor("#fdf5e6"));
-    Object.defineProperty(color, "olive", colorConstructor("#808000"));
-    Object.defineProperty(color, "oliveDrab", colorConstructor("#6b8e23"));
-    Object.defineProperty(color, "orange", colorConstructor("#ffa500"));
-    Object.defineProperty(color, "orangeRed", colorConstructor("#ff4500"));
-    Object.defineProperty(color, "orchid", colorConstructor("#da70d6"));
+    Object.defineProperty(Color, "oldLace", colorConstructor("#fdf5e6"));
+    Object.defineProperty(Color, "olive", colorConstructor("#808000"));
+    Object.defineProperty(Color, "oliveDrab", colorConstructor("#6b8e23"));
+    Object.defineProperty(Color, "orange", colorConstructor("#ffa500"));
+    Object.defineProperty(Color, "orangeRed", colorConstructor("#ff4500"));
+    Object.defineProperty(Color, "orchid", colorConstructor("#da70d6"));
     
     //P//
-    Object.defineProperty(color, "paleGoldenRod", colorConstructor("#eee8aa"));
-    Object.defineProperty(color, "paleGreen", colorConstructor("#98fb98"));
-    Object.defineProperty(color, "paleTurquoise", colorConstructor("#afeeee"));
-    Object.defineProperty(color, "paleVoiletRed", colorConstructor("#db7093"));
-    Object.defineProperty(color, "papayaWhip", colorConstructor("#ffefd5"));
-    Object.defineProperty(color, "peachPuff", colorConstructor("#ffdab9"));
-    Object.defineProperty(color, "peru", colorConstructor("#cd853f"));
-    Object.defineProperty(color, "pink", colorConstructor("#ffc0cb"));
-    Object.defineProperty(color, "plum", colorConstructor("#dda0dd"));
-    Object.defineProperty(color, "powderBlue", colorConstructor("#b0e0e6"));
-    Object.defineProperty(color, "purple", colorConstructor("#800080"));
+    Object.defineProperty(Color, "paleGoldenRod", colorConstructor("#eee8aa"));
+    Object.defineProperty(Color, "paleGreen", colorConstructor("#98fb98"));
+    Object.defineProperty(Color, "paleTurquoise", colorConstructor("#afeeee"));
+    Object.defineProperty(Color, "paleVoiletRed", colorConstructor("#db7093"));
+    Object.defineProperty(Color, "papayaWhip", colorConstructor("#ffefd5"));
+    Object.defineProperty(Color, "peachPuff", colorConstructor("#ffdab9"));
+    Object.defineProperty(Color, "peru", colorConstructor("#cd853f"));
+    Object.defineProperty(Color, "pink", colorConstructor("#ffc0cb"));
+    Object.defineProperty(Color, "plum", colorConstructor("#dda0dd"));
+    Object.defineProperty(Color, "powderBlue", colorConstructor("#b0e0e6"));
+    Object.defineProperty(Color, "purple", colorConstructor("#800080"));
     
     //R//
-    Object.defineProperty(color, "rebeccaPurple", colorConstructor("#663399"));
-    Object.defineProperty(color, "red", colorConstructor("#ff0000"));
-    Object.defineProperty(color, "rosyBrown", colorConstructor("#bc8f8f"));
-    Object.defineProperty(color, "royalBlue", colorConstructor("#4169e1"));
+    Object.defineProperty(Color, "rebeccaPurple", colorConstructor("#663399"));
+    Object.defineProperty(Color, "red", colorConstructor("#ff0000"));
+    Object.defineProperty(Color, "rosyBrown", colorConstructor("#bc8f8f"));
+    Object.defineProperty(Color, "royalBlue", colorConstructor("#4169e1"));
     
     //S//
-    Object.defineProperty(color, "saddleBrown", colorConstructor("#8b4513"));
-    Object.defineProperty(color, "salmon", colorConstructor("#fa8072"));
-    Object.defineProperty(color, "sandyBrown", colorConstructor("#f4a460"));
-    Object.defineProperty(color, "seaGreen", colorConstructor("#2e8b57"));
-    Object.defineProperty(color, "seaShell", colorConstructor("#fff5ee"));
-    Object.defineProperty(color, "sienna", colorConstructor("#a0522d"));
-    Object.defineProperty(color, "silver", colorConstructor("#c0c0c0"));
-    Object.defineProperty(color, "skyBlue", colorConstructor("#87ceeb"));
-    Object.defineProperty(color, "slateBlue", colorConstructor("#6a5acd"));
-    Object.defineProperty(color, "slateGray", colorConstructor("#708090"));
-    Object.defineProperty(color, "slateGrey", colorConstructor("#708090"));
-    Object.defineProperty(color, "snow", colorConstructor("#fffafa"));
-    Object.defineProperty(color, "springGreen", colorConstructor("#00ff7f"));
-    Object.defineProperty(color, "steelBlue", colorConstructor("#4682b4"));
+    Object.defineProperty(Color, "saddleBrown", colorConstructor("#8b4513"));
+    Object.defineProperty(Color, "salmon", colorConstructor("#fa8072"));
+    Object.defineProperty(Color, "sandyBrown", colorConstructor("#f4a460"));
+    Object.defineProperty(Color, "seaGreen", colorConstructor("#2e8b57"));
+    Object.defineProperty(Color, "seaShell", colorConstructor("#fff5ee"));
+    Object.defineProperty(Color, "sienna", colorConstructor("#a0522d"));
+    Object.defineProperty(Color, "silver", colorConstructor("#c0c0c0"));
+    Object.defineProperty(Color, "skyBlue", colorConstructor("#87ceeb"));
+    Object.defineProperty(Color, "slateBlue", colorConstructor("#6a5acd"));
+    Object.defineProperty(Color, "slateGray", colorConstructor("#708090"));
+    Object.defineProperty(Color, "slateGrey", colorConstructor("#708090"));
+    Object.defineProperty(Color, "snow", colorConstructor("#fffafa"));
+    Object.defineProperty(Color, "springGreen", colorConstructor("#00ff7f"));
+    Object.defineProperty(Color, "steelBlue", colorConstructor("#4682b4"));
     
     //T//
-    Object.defineProperty(color, "tan", colorConstructor("#d2b48c"));
-    Object.defineProperty(color, "teal", colorConstructor("#008080"));
-    Object.defineProperty(color, "thistle", colorConstructor("#d8bfd8"));
-    Object.defineProperty(color, "tomato", colorConstructor("#ff6347"));
-    Object.defineProperty(color, "turquoise", colorConstructor("#40e0d0"));
+    Object.defineProperty(Color, "tan", colorConstructor("#d2b48c"));
+    Object.defineProperty(Color, "teal", colorConstructor("#008080"));
+    Object.defineProperty(Color, "thistle", colorConstructor("#d8bfd8"));
+    Object.defineProperty(Color, "tomato", colorConstructor("#ff6347"));
+    Object.defineProperty(Color, "turquoise", colorConstructor("#40e0d0"));
     
     //V//
-    Object.defineProperty(color, "violet", colorConstructor("#ee82ee"));
+    Object.defineProperty(Color, "violet", colorConstructor("#ee82ee"));
 
     //W//
-    Object.defineProperty(color, "wheat", colorConstructor("#f5deb3"));
-    Object.defineProperty(color, "white", colorConstructor("#ffffff"));
-    Object.defineProperty(color, "whiteSmoke", colorConstructor("#f5f5f5"));
+    Object.defineProperty(Color, "wheat", colorConstructor("#f5deb3"));
+    Object.defineProperty(Color, "white", colorConstructor("#ffffff"));
+    Object.defineProperty(Color, "whiteSmoke", colorConstructor("#f5f5f5"));
 
     //Y//
-    Object.defineProperty(color, "yellow", colorConstructor("#ffff00"));
-    Object.defineProperty(color, "yellowGreen", colorConstructor("#9acd32"));
+    Object.defineProperty(Color, "yellow", colorConstructor("#ffff00"));
+    Object.defineProperty(Color, "yellowGreen", colorConstructor("#9acd32"));
 }
