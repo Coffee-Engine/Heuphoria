@@ -289,6 +289,8 @@
                     output.a + (other.a - output.a) * amount
                 );
             }
+
+            return output;
         }
 
         constructor(r, g, b, a) {
